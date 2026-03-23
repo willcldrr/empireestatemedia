@@ -27,7 +27,7 @@ export default function Home() {
             </p>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal text-white mb-6 sm:mb-8 leading-[1.1]">
-              <span className="whitespace-nowrap">Where Top Agents</span>
+              <span className="whitespace-nowrap">Where Top Realtors</span>
               <br />
               <span className="italic">Build Empires</span>
             </h1>
@@ -180,57 +180,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Us Section */}
-      <section className="section-padding bg-black border-t border-white/5">
+      {/* NYC Exclusive Section */}
+      <section className="section-padding bg-[#080808] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          {/* Header */}
-          <div className="text-center mb-12 sm:mb-20">
-            <p className="text-[11px] tracking-[0.3em] uppercase text-white/40 mb-6">
-              Why Empire Estate
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-[1.2] mb-6 sm:mb-8">
-              We only work with <span className="italic">NYC real estate</span>
-            </h2>
-            <p className="text-white/50 leading-relaxed max-w-2xl mx-auto">
-              While other agencies juggle restaurants, dentists, and retail shops, we&apos;ve spent years mastering one thing: marketing for New York City real estate professionals.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Left Column - Header */}
+            <div className="lg:sticky lg:top-32">
+              <p className="text-[11px] tracking-[0.3em] uppercase text-[#1e3a5f] mb-6">
+                New York City Exclusive
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white leading-[1.2] mb-6">
+                Radically
+                <br />
+                <span className="italic">specialized</span>
+              </h2>
+              <p className="text-white/50 leading-relaxed">
+                While other agencies juggle restaurants, dentists, and retail shops, we&apos;ve spent years mastering one thing: marketing for New York City real estate professionals.
+              </p>
+            </div>
 
-          {/* Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {[
-              {
-                number: "01",
-                title: "We understand your business",
-                description: "Listing cycles, open house strategies, buyer psychology. We speak your language because we&apos;ve immersed ourselves in your industry.",
-              },
-              {
-                number: "02",
-                title: "We know your market",
-                description: "From Tribeca to the Upper West Side, Brooklyn brownstones to Queens co-ops. We understand the nuances that matter to your clients.",
-              },
-              {
-                number: "03",
-                title: "We deliver, you close",
-                description: "You focus on showings and negotiations. We handle the marketing machine that keeps your pipeline full of qualified opportunities.",
-              },
-              {
-                number: "04",
-                title: "We grow with you",
-                description: "Start with social presence. Scale to paid advertising. Build toward market dominance. Our systems evolve as your business grows.",
-              },
-            ].map((step, index) => (
-              <div
-                key={index}
-                className="group relative p-6 sm:p-8 border border-white/10 hover:border-[#1e3a5f]/50 transition-all duration-500"
-              >
-                <span className="font-serif italic text-[#1e3a5f] text-4xl mb-6 block">
-                  {step.number}
-                </span>
-                <h3 className="text-white text-lg mb-4">{step.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
-              </div>
-            ))}
+            {/* Right Column - Items */}
+            <div className="space-y-0">
+              {[
+                {
+                  number: "01",
+                  title: "We understand your business",
+                  description: "Listing cycles, open house strategies, buyer psychology. We speak your language because we&apos;ve immersed ourselves in your industry.",
+                },
+                {
+                  number: "02",
+                  title: "We know your market",
+                  description: "From Tribeca to the Upper West Side, Brooklyn brownstones to Queens co-ops. We understand the nuances that matter to your clients.",
+                },
+                {
+                  number: "03",
+                  title: "We deliver, you close",
+                  description: "You focus on showings and negotiations. We handle the marketing machine that keeps your pipeline full of qualified opportunities.",
+                },
+                {
+                  number: "04",
+                  title: "We grow with you",
+                  description: "Start with social presence. Scale to paid advertising. Build toward market dominance. Our systems evolve as your business grows.",
+                },
+              ].map((step, index) => (
+                <div
+                  key={index}
+                  className="group py-8 border-b border-white/10 last:border-0"
+                >
+                  <div className="flex items-start gap-6">
+                    <span className="font-serif italic text-[#1e3a5f] text-sm mt-1">
+                      {step.number}
+                    </span>
+                    <div>
+                      <h3 className="text-white text-lg mb-2">{step.title}</h3>
+                      <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

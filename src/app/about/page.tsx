@@ -20,7 +20,7 @@ export default function AboutPage() {
             <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-normal text-white mb-6 sm:mb-8 leading-[1.1]">
               We exist to make
               <br />
-              <span className="italic">great agents famous</span>
+              <span className="italic">good agents great</span>
             </h1>
             <p className="text-white/50 text-lg sm:text-xl leading-relaxed max-w-2xl">
               Empire Estate Media was founded on a simple belief: the best agents in New York City deserve marketing that matches the caliber of properties they represent.
