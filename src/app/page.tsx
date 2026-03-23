@@ -181,63 +181,59 @@ export default function Home() {
       </section>
 
       {/* NYC Exclusive Section */}
-      <section className="section-padding bg-[#080808] border-t border-white/5">
+      <section className="py-24 sm:py-32 bg-black border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Left Column - Header */}
-            <div className="lg:sticky lg:top-32">
-              <p className="text-[11px] tracking-[0.3em] uppercase text-[#1e3a5f] mb-6">
-                New York City Exclusive
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white leading-[1.2] mb-6">
-                Radically
-                <br />
-                <span className="italic">specialized</span>
-              </h2>
+          {/* Large Statement */}
+          <div className="relative mb-20 sm:mb-28">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-[#1e3a5f] mb-6">
+              New York City Exclusive
+            </p>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white leading-[1.1] max-w-4xl">
+              One city. One industry.
+              <br />
+              <span className="italic text-white/40">Total focus.</span>
+            </h2>
+          </div>
+
+          {/* Stats Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-20 sm:mb-28 pb-20 sm:pb-28 border-b border-white/10">
+            <div>
+              <p className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2">50M+</p>
+              <p className="text-white/40 text-sm">Impressions generated</p>
+            </div>
+            <div>
+              <p className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2">3.2x</p>
+              <p className="text-white/40 text-sm">Average lead increase</p>
+            </div>
+            <div>
+              <p className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2">$2B+</p>
+              <p className="text-white/40 text-sm">In client sales volume</p>
+            </div>
+            <div>
+              <p className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2">48hr</p>
+              <p className="text-white/40 text-sm">Average response time</p>
+            </div>
+          </div>
+
+          {/* Why Specialization */}
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div className="md:border-r md:border-white/10 md:pr-12">
+              <p className="text-[#1e3a5f] text-sm uppercase tracking-[0.2em] mb-4">The Market</p>
               <p className="text-white/50 leading-relaxed">
-                While other agencies juggle restaurants, dentists, and retail shops, we&apos;ve spent years mastering one thing: marketing for New York City real estate professionals.
+                We know every neighborhood, every buyer profile, every seasonal trend in NYC real estate.
               </p>
             </div>
-
-            {/* Right Column - Items */}
-            <div className="space-y-0">
-              {[
-                {
-                  number: "01",
-                  title: "We understand your business",
-                  description: "Listing cycles, open house strategies, buyer psychology. We speak your language because we&apos;ve immersed ourselves in your industry.",
-                },
-                {
-                  number: "02",
-                  title: "We know your market",
-                  description: "From Tribeca to the Upper West Side, Brooklyn brownstones to Queens co-ops. We understand the nuances that matter to your clients.",
-                },
-                {
-                  number: "03",
-                  title: "We deliver, you close",
-                  description: "You focus on showings and negotiations. We handle the marketing machine that keeps your pipeline full of qualified opportunities.",
-                },
-                {
-                  number: "04",
-                  title: "We grow with you",
-                  description: "Start with social presence. Scale to paid advertising. Build toward market dominance. Our systems evolve as your business grows.",
-                },
-              ].map((step, index) => (
-                <div
-                  key={index}
-                  className="group py-8 border-b border-white/10 last:border-0"
-                >
-                  <div className="flex items-start gap-6">
-                    <span className="font-serif italic text-[#1e3a5f] text-sm mt-1">
-                      {step.number}
-                    </span>
-                    <div>
-                      <h3 className="text-white text-lg mb-2">{step.title}</h3>
-                      <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="md:border-r md:border-white/10 md:pr-12">
+              <p className="text-[#1e3a5f] text-sm uppercase tracking-[0.2em] mb-4">The Strategy</p>
+              <p className="text-white/50 leading-relaxed">
+                Every campaign is built on years of data from the most competitive market in the country.
+              </p>
+            </div>
+            <div>
+              <p className="text-[#1e3a5f] text-sm uppercase tracking-[0.2em] mb-4">The Results</p>
+              <p className="text-white/50 leading-relaxed">
+                Depth beats breadth. Our focus translates directly into better outcomes for our clients.
+              </p>
             </div>
           </div>
         </div>
