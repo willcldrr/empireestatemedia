@@ -81,10 +81,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-white/10 flex justify-center">
+        <div className="py-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-xs tracking-wider">
             © {new Date().getFullYear()} Empire Estate Media
           </p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
