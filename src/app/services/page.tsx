@@ -348,7 +348,7 @@ export default function ServicesPage() {
             </Link>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-white/40 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-4 text-white/40 text-sm flex-wrap">
             <a
               href="mailto:liuanthony826@gmail.com"
               className="hover:text-white transition-colors"
@@ -357,10 +357,24 @@ export default function ServicesPage() {
             </a>
             <span className="hidden sm:block">·</span>
             <a
+              href="mailto:AnthonyLiu@empireestatemedia.com"
+              className="hover:text-white transition-colors"
+            >
+              AnthonyLiu@empireestatemedia.com
+            </a>
+            <span className="hidden sm:block">·</span>
+            <a
               href="tel:+17175726295"
               className="hover:text-white transition-colors"
             >
               +1 (717) 572-6295
+            </a>
+            <span className="hidden sm:block">·</span>
+            <a
+              href="tel:+13479419083"
+              className="hover:text-white transition-colors"
+            >
+              +1 (347) 941-9083
             </a>
           </div>
         </div>

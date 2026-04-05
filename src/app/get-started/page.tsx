@@ -35,6 +35,8 @@ export default function GetStartedPage() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const totalSteps = 5;
 
@@ -60,10 +62,30 @@ export default function GetStartedPage() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    // In production, this would send to an API
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/submit-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError("There was a problem submitting your application. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const canProceed = () => {
@@ -449,15 +471,22 @@ export default function GetStartedPage() {
           ) : (
             <button
               onClick={handleSubmit}
-              disabled={!canProceed()}
+              disabled={!canProceed() || isSubmitting}
               className={`btn-primary ${
-                !canProceed() ? "opacity-30 cursor-not-allowed" : ""
+                !canProceed() || isSubmitting ? "opacity-30 cursor-not-allowed" : ""
               }`}
             >
-              Submit Application
+              {isSubmitting ? "Submitting..." : "Submit Application"}
             </button>
           )}
         </div>
+
+        {/* Error Message */}
+        {submitError && (
+          <div className="mt-6 p-4 border border-red-500/30 bg-red-500/10 text-red-400 text-sm">
+            {submitError}
+          </div>
+        )}
       </div>
     </div>
   );

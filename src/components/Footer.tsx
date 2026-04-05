@@ -70,10 +70,26 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="mailto:AnthonyLiu@empireestatemedia.com"
+                  className="text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  AnthonyLiu@empireestatemedia.com
+                </a>
+              </li>
+              <li>
+                <a
                   href="tel:+17175726295"
                   className="text-sm text-white/60 hover:text-white transition-colors"
                 >
                   +1 (717) 572-6295
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+13479419083"
+                  className="text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  +1 (347) 941-9083
                 </a>
               </li>
             </ul>

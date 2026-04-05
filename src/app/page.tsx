@@ -244,10 +244,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <p className="text-white/40 text-sm italic font-serif">
-              &ldquo;The difference is night and day. My phone actually rings now.&rdquo;
+              &ldquo;Working with EEM was a game-changer for my business. Their attention to detail, responsiveness, and ability to position properties in the best possible light consistently delivers results. It&apos;s rare to find a team that understands both the market and the client experience this well.&rdquo;
             </p>
             <p className="text-white/30 text-xs mt-4 tracking-wider uppercase">
-              NYC Luxury Agent, Manhattan
+              Daniel Mercer, Agent
             </p>
           </div>
         </div>
