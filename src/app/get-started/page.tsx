@@ -75,8 +75,10 @@ export default function GetStartedPage() {
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to submit form");
+        throw new Error(result.error || "Failed to submit form");
       }
 
       setSubmitted(true);
