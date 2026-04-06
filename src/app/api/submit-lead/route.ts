@@ -86,30 +86,58 @@ export async function POST(request: NextRequest) {
     }
 
     // Send to Web3Forms
+    const web3FormsPayload = {
+      access_key: accessKey,
+      subject: `New Lead: ${data.name} - ${data.budget}/mo budget`,
+      from_name: "Empire Estate Media Website",
+      message: formatLeadDetails(data),
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+    };
+
+    console.log("Sending to Web3Forms with access_key:", accessKey ? "***" + accessKey.slice(-4) : "MISSING");
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
+        "User-Agent": "Mozilla/5.0 (compatible; EmpireEstateMedia/1.0)",
       },
-      body: JSON.stringify({
-        access_key: accessKey,
-        subject: `New Lead: ${data.name} - ${data.budget}/mo budget`,
-        from_name: "Empire Estate Media Website",
-        message: formatLeadDetails(data),
-        // Include raw fields for easy reading
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-      }),
+      body: JSON.stringify(web3FormsPayload),
     });
 
-    const result = await response.json();
+    // Get response as text first to check for Cloudflare blocks
+    const responseText = await response.text();
 
-    if (!result.success) {
-      console.error("Web3Forms error:", result);
+    // Check for Cloudflare challenge page
+    if (responseText.includes("Just a moment") || responseText.includes("<!DOCTYPE")) {
+      console.error("Web3Forms returned non-JSON response (possible Cloudflare block):", responseText.slice(0, 200));
       return NextResponse.json({ success: true, emailSent: false });
     }
 
+    // Check HTTP response status
+    if (!response.ok) {
+      console.error("Web3Forms HTTP error:", response.status, responseText);
+      return NextResponse.json({ success: true, emailSent: false });
+    }
+
+    // Parse JSON response
+    let result;
+    try {
+      result = JSON.parse(responseText);
+    } catch (parseError) {
+      console.error("Failed to parse Web3Forms response:", parseError, responseText.slice(0, 200));
+      return NextResponse.json({ success: true, emailSent: false });
+    }
+
+    if (!result.success) {
+      console.error("Web3Forms API error:", result);
+      return NextResponse.json({ success: true, emailSent: false });
+    }
+
+    console.log("Web3Forms submission successful:", result);
     return NextResponse.json({ success: true, emailSent: true });
   } catch (error) {
     console.error("Error processing form submission:", error);

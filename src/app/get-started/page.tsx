@@ -66,19 +66,87 @@ export default function GetStartedPage() {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      console.error("Missing Web3Forms access key");
+      setSubmitError("Configuration error. Please contact support.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Format labels for the email
+    const roleLabels: Record<string, string> = {
+      solo: "Solo Agent",
+      "team-member": "Team Member",
+      "team-lead": "Team Leader",
+      broker: "Broker / Owner",
+    };
+
+    const marketingLabels: Record<string, string> = {
+      nothing: "Minimal presence",
+      diy: "DIY approach",
+      agency: "Working with someone (not satisfied)",
+      internal: "In-house support",
+    };
+
+    const budgetLabels: Record<string, string> = {
+      "under-1k": "Under $1,000",
+      "1k-2k": "$1,000 - $2,000",
+      "2k-4k": "$2,000 - $4,000",
+      "4k-6k": "$4,000 - $6,000",
+      "6k-10k": "$6,000 - $10,000",
+      "10k+": "$10,000+",
+    };
+
+    const message = `
+CONTACT INFORMATION
+-------------------
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Website/Instagram: ${formData.website || "Not provided"}
+
+BUSINESS PROFILE
+----------------
+Role: ${roleLabels[formData.role] || formData.role}
+Annual Transactions: ${formData.transactions} deals
+Markets: ${formData.markets.join(", ")}
+
+CURRENT SITUATION
+-----------------
+Marketing Status: ${marketingLabels[formData.currentMarketing] || formData.currentMarketing}
+Challenges: ${formData.challenges.join(", ")}
+
+INVESTMENT & GOALS
+------------------
+Monthly Budget: ${budgetLabels[formData.budget] || formData.budget}
+Goals: ${formData.goals}
+    `.trim();
+
     try {
-      const response = await fetch("/api/submit-lead", {
+      // Submit directly to Web3Forms from the client (bypasses Cloudflare bot detection)
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New Lead: ${formData.name} - ${budgetLabels[formData.budget] || formData.budget}/mo budget`,
+          from_name: "Empire Estate Media Website",
+          message: message,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+        }),
       });
 
       const result = await response.json();
 
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to submit form");
+      if (!result.success) {
+        throw new Error(result.message || "Failed to submit form");
       }
 
       setSubmitted(true);
