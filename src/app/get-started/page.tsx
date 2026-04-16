@@ -55,11 +55,17 @@ export default function GetStartedPage() {
   };
 
   const nextStep = () => {
-    if (step < totalSteps) setStep(step + 1);
+    if (step < totalSteps) {
+      setStep(step + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const prevStep = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) {
+      setStep(step - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const handleSubmit = async () => {
