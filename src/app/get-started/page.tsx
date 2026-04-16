@@ -126,26 +126,34 @@ Goals: ${formData.goals}
 
     try {
       // Submit directly to Web3Forms from the client (bypasses Cloudflare bot detection)
+      const payload = {
+        access_key: accessKey,
+        subject: `New Lead: ${formData.name} - ${budgetLabels[formData.budget] || formData.budget}/mo budget`,
+        from_name: "Empire Estate Media Website",
+        replyto: formData.email, // Important: allows replies to go to the lead
+        message: message,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+      };
+
+      // Debug logging (visible in browser console)
+      console.log("Submitting to Web3Forms with access_key:", accessKey ? `***${accessKey.slice(-4)}` : "MISSING");
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `New Lead: ${formData.name} - ${budgetLabels[formData.budget] || formData.budget}/mo budget`,
-          from_name: "Empire Estate Media Website",
-          message: message,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
+      console.log("Web3Forms response:", result);
 
       if (!result.success) {
+        console.error("Web3Forms error:", result);
         throw new Error(result.message || "Failed to submit form");
       }
 
