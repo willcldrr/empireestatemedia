@@ -20,9 +20,9 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-0 md:pt-20">
           <div className="max-w-3xl">
-            <p className="text-[11px] tracking-[0.3em] uppercase text-white/50 mb-8">
+            <p className="hidden md:block text-[11px] tracking-[0.3em] uppercase text-white/50 mb-8">
               Strategic Marketing for NYC Real Estate
             </p>
 
