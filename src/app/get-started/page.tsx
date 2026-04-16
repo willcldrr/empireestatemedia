@@ -99,29 +99,150 @@ export default function GetStartedPage() {
       "10k+": "$10,000+",
     };
 
+    // Build HTML email matching the Empire Estate Media brand
     const message = `
-CONTACT INFORMATION
--------------------
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Website/Instagram: ${formData.website || "Not provided"}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%;">
 
-BUSINESS PROFILE
-----------------
-Role: ${roleLabels[formData.role] || formData.role}
-Annual Transactions: ${formData.transactions} deals
-Markets: ${formData.markets.join(", ")}
+          <!-- Header -->
+          <tr>
+            <td style="padding-bottom: 40px; border-bottom: 1px solid #1a1a1a;">
+              <p style="margin: 0 0 8px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #666666;">
+                New Lead Submission
+              </p>
+              <h1 style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: normal; color: #ffffff;">
+                ${formData.name}
+              </h1>
+              <p style="margin: 8px 0 0 0; font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 18px; color: #1e3a5f;">
+                ${budgetLabels[formData.budget] || formData.budget}/month
+              </p>
+            </td>
+          </tr>
 
-CURRENT SITUATION
------------------
-Marketing Status: ${marketingLabels[formData.currentMarketing] || formData.currentMarketing}
-Challenges: ${formData.challenges.join(", ")}
+          <!-- Contact Section -->
+          <tr>
+            <td style="padding: 40px 0; border-bottom: 1px solid #1a1a1a;">
+              <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #1e3a5f;">
+                Contact Information
+              </p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #111111;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Email</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">
+                      <a href="mailto:${formData.email}" style="color: #ffffff; text-decoration: none;">${formData.email}</a>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #111111;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Phone</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">
+                      <a href="tel:${formData.phone}" style="color: #ffffff; text-decoration: none;">${formData.phone}</a>
+                    </p>
+                  </td>
+                </tr>
+                ${formData.website ? `
+                <tr>
+                  <td style="padding: 12px 0;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Website / Instagram</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">${formData.website}</p>
+                  </td>
+                </tr>
+                ` : ''}
+              </table>
+            </td>
+          </tr>
 
-INVESTMENT & GOALS
-------------------
-Monthly Budget: ${budgetLabels[formData.budget] || formData.budget}
-Goals: ${formData.goals}
+          <!-- Business Profile Section -->
+          <tr>
+            <td style="padding: 40px 0; border-bottom: 1px solid #1a1a1a;">
+              <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #1e3a5f;">
+                Business Profile
+              </p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="50%" style="padding: 12px 0; vertical-align: top;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Role</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">${roleLabels[formData.role] || formData.role}</p>
+                  </td>
+                  <td width="50%" style="padding: 12px 0; vertical-align: top;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Annual Volume</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">${formData.transactions} deals</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding: 12px 0;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Markets</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">${formData.markets.join(" · ")}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Current Situation Section -->
+          <tr>
+            <td style="padding: 40px 0; border-bottom: 1px solid #1a1a1a;">
+              <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #1e3a5f;">
+                Current Situation
+              </p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #111111;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Marketing Status</span>
+                    <p style="margin: 4px 0 0 0; font-size: 16px; color: #ffffff;">${marketingLabels[formData.currentMarketing] || formData.currentMarketing}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666666;">Challenges</span>
+                    <p style="margin: 4px 0 0 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.7);">${formData.challenges.join(" · ")}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Goals Section -->
+          <tr>
+            <td style="padding: 40px 0; border-bottom: 1px solid #1a1a1a;">
+              <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #1e3a5f;">
+                Goals
+              </p>
+              <p style="margin: 0; font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.8); font-style: italic;">
+                "${formData.goals}"
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 40px 0 0 0; text-align: center;">
+              <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; color: #666666;">
+                Empire Estate Media
+              </p>
+              <p style="margin: 8px 0 0 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #444444;">
+                Strategic Marketing for NYC Real Estate
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
     `.trim();
 
     try {
