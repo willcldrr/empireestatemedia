@@ -151,7 +151,7 @@ export default function TermsOfServicePage() {
                 Each party acknowledges that it may receive or have access to confidential information of the other party (&quot;Confidential Information&quot;). Confidential Information includes, without limitation, business plans, strategies, client lists, financial information, pricing, proprietary technology, and any other information designated as confidential or that reasonably should be understood to be confidential.
               </p>
               <p className="mt-4">
-                Each party agrees to: (a) hold the other party&apos;s Confidential Information in strict confidence; (b) not disclose such Confidential Information to any third party without the prior written consent of the disclosing party; and (c) use such Confidential Information only for the purposes of performing obligations under these Terms.
+                Each party agrees to: (a) hold the other party's Confidential Information in strict confidence; (b) not disclose such Confidential Information to any third party without the prior written consent of the disclosing party; and (c) use such Confidential Information only for the purposes of performing obligations under these Terms.
               </p>
               <p className="mt-4">
                 These confidentiality obligations shall not apply to information that: (a) is or becomes publicly available without breach of these Terms; (b) was known to the receiving party prior to disclosure; (c) is independently developed without use of Confidential Information; or (d) is required to be disclosed by law or court order.
@@ -196,7 +196,7 @@ export default function TermsOfServicePage() {
             <section>
               <h2 className="text-white text-2xl font-serif mb-4">10. Indemnification</h2>
               <p>
-                You agree to indemnify, defend, and hold harmless Empire Estate Media, its officers, directors, employees, agents, successors, and assigns from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to: (a) your breach of any representation, warranty, or obligation under these Terms; (b) your use of the Services; (c) any claim that the Client Materials infringe or violate any third-party intellectual property rights or other rights; (d) your violation of any applicable law or regulation; or (e) any act or omission by you or your agents, employees, or contractors.
+                You agree to indemnify, defend, and hold harmless Empire Estate Media, its officers, directors, employees, agents, successors, and assigns from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to: (a) your breach of any representation, warranty, or obligation under these Terms; (b) your use of the Services; (c) any claim that the Client Materials infringe or violate any third-party intellectual property rights or other rights; (d) your violation of any applicable law or regulation; or (e) any act or omission by you or your agents, employees, or contractors.
               </p>
             </section>
 
@@ -210,7 +210,7 @@ export default function TermsOfServicePage() {
 
               <h3 className="text-white text-xl mt-6 mb-3">11.2 Termination for Convenience</h3>
               <p>
-                Either party may terminate an ongoing service engagement by providing thirty (30) days&apos; written notice to the other party, unless otherwise specified in the applicable SOW or Service Agreement.
+                Either party may terminate an ongoing service engagement by providing thirty (30) days' written notice to the other party, unless otherwise specified in the applicable SOW or Service Agreement.
               </p>
 
               <h3 className="text-white text-xl mt-6 mb-3">11.3 Termination for Cause</h3>

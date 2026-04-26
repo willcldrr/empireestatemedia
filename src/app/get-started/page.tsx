@@ -337,7 +337,7 @@ export default function GetStartedPage() {
             Application <span className="italic">received</span>
           </h1>
           <p className="text-white/50 text-base sm:text-lg mb-8 leading-relaxed">
-            Thank you for your interest in working with Empire Estate Media. We review every application personally and will be in touch within 2 business days if there&apos;s a potential fit.
+            Thank you for your interest in working with Empire Estate Media. We review every application personally and will be in touch within 2 business days if there's a potential fit.
           </p>
           <Link href="/" className="btn-outline inline-block">
             Return Home
@@ -356,7 +356,7 @@ export default function GetStartedPage() {
             Application · Step {step} of {totalSteps}
           </p>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4">
-            Let&apos;s see if we&apos;re
+            Let's see if we're
             <br />
             <span className="italic">the right fit</span>
           </h1>
@@ -545,7 +545,7 @@ export default function GetStartedPage() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-white text-xl mb-2">Monthly marketing budget?</h2>
-                <p className="text-white/40 text-sm">What you&apos;re prepared to invest in growth</p>
+                <p className="text-white/40 text-sm">What you're prepared to invest in growth</p>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
@@ -593,7 +593,7 @@ export default function GetStartedPage() {
           <div className="space-y-8">
             <div>
               <h2 className="text-white text-xl mb-2">Your contact information</h2>
-              <p className="text-white/40 text-sm">We&apos;ll reach out within 2 business days if there&apos;s a potential fit</p>
+              <p className="text-white/40 text-sm">We'll reach out within 2 business days if there's a potential fit</p>
             </div>
 
             <div className="space-y-6">

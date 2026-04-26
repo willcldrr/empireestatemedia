@@ -33,7 +33,7 @@ export default function Home() {
             </h1>
 
             <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-xl mb-12">
-              Premium marketing infrastructure for New York&apos;s most ambitious real estate professionals.
+              Premium marketing infrastructure for New York's most ambitious real estate professionals.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -67,10 +67,10 @@ export default function Home() {
                   You close deals. You know your market. But when potential clients search for an agent, they find your competitors first.
                 </p>
                 <p>
-                  The agents winning on social media aren&apos;t necessarily better than you. They simply have better systems. Professional content. Strategic advertising. A brand that positions them as the obvious choice.
+                  The agents winning on social media aren't necessarily better than you. They simply have better systems. Professional content. Strategic advertising. A brand that positions them as the obvious choice.
                 </p>
                 <p className="text-white/70">
-                  That&apos;s exactly what we build for a select group of NYC agents.
+                  That's exactly what we build for a select group of NYC agents.
                 </p>
               </div>
               <div className="mt-8 sm:mt-10 pt-8 sm:pt-10 border-t border-white/10">
@@ -244,7 +244,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <p className="text-white/40 text-sm italic font-serif">
-              &ldquo;Working with EEM was a game-changer for my business. Their attention to detail, responsiveness, and ability to position properties in the best possible light consistently delivers results. It&apos;s rare to find a team that understands both the market and the client experience this well.&rdquo;
+              &ldquo;Working with EEM was a game-changer for my business. Their attention to detail, responsiveness, and ability to position properties in the best possible light consistently delivers results. It's rare to find a team that understands both the market and the client experience this well.&rdquo;
             </p>
             <p className="text-white/30 text-xs mt-4 tracking-wider uppercase">
               Daniel Mercer, Agent
@@ -276,7 +276,7 @@ export default function Home() {
             <span className="italic">dominate your market?</span>
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-xl mx-auto">
-            We partner with a limited number of agents to ensure exceptional results. Apply now to see if we&apos;re the right fit.
+            We partner with a limited number of agents to ensure exceptional results. Apply now to see if we're the right fit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-started" className="btn-primary inline-block">

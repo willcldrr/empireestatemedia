@@ -134,7 +134,7 @@ export default function ServicesPage() {
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white leading-[1.2]">
               Choose based on
               <br />
-              <span className="italic">where you&apos;re headed</span>
+              <span className="italic">where you're headed</span>
             </h2>
             <p className="text-white/50 mt-6 leading-relaxed">
               Each package builds on the previous one. Start where it makes sense for your business today, scale as you grow.
@@ -220,7 +220,7 @@ export default function ServicesPage() {
               From application <span className="italic">to results</span>
             </h2>
             <p className="text-white/50 leading-relaxed max-w-2xl mx-auto">
-              We&apos;ve refined our process to ensure every client engagement starts strong and delivers measurable outcomes.
+              We've refined our process to ensure every client engagement starts strong and delivers measurable outcomes.
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function ServicesPage() {
                 {
                   number: "02",
                   title: "Strategy session",
-                  description: "A 45-minute call to understand your business, market position, and goals. We&apos;ll outline a preliminary strategy and discuss investment levels.",
+                  description: "A 45-minute call to understand your business, market position, and goals. We'll outline a preliminary strategy and discuss investment levels.",
                 },
                 {
                   number: "03",
@@ -281,7 +281,7 @@ export default function ServicesPage() {
               Questions
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-normal text-white leading-[1.2]">
-              What you&apos;re probably wondering
+              What you're probably wondering
             </h2>
           </div>
 
@@ -293,15 +293,15 @@ export default function ServicesPage() {
               },
               {
                 question: "What makes you different from other agencies?",
-                answer: "Specialization. We only work with NYC real estate professionals, which means every strategy, every piece of content, every campaign is informed by deep market knowledge. Generalists can&apos;t compete with that.",
+                answer: "Specialization. We only work with NYC real estate professionals, which means every strategy, every piece of content, every campaign is informed by deep market knowledge. Generalists can't compete with that.",
               },
               {
                 question: "How much involvement is required from me?",
                 answer: "Minimal. After onboarding, expect 1-2 hours monthly for strategy calls and content approvals. We handle the heavy lifting. You focus on clients.",
               },
               {
-                question: "What if I&apos;m already working with someone?",
-                answer: "We&apos;re happy to audit your current efforts and identify gaps. Many clients come to us after outgrowing their previous agency or being disappointed by generalist approaches.",
+                question: "What if I'm already working with someone?",
+                answer: "We're happy to audit your current efforts and identify gaps. Many clients come to us after outgrowing their previous agency or being disappointed by generalist approaches.",
               },
             ].map((faq, index) => (
               <div key={index} className="pb-12 border-b border-white/10 last:border-0 last:pb-0">
@@ -331,12 +331,12 @@ export default function ServicesPage() {
             Next Step
           </p>
           <h2 className="font-serif text-4xl md:text-6xl font-normal text-white mb-8 leading-[1.1]">
-            Let&apos;s see if we&apos;re
+            Let's see if we're
             <br />
             <span className="italic">the right fit</span>
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-xl mx-auto">
-            Complete our brief application. If there&apos;s potential for a strong partnership, we&apos;ll schedule a strategy call to discuss your goals.
+            Complete our brief application. If there's potential for a strong partnership, we'll schedule a strategy call to discuss your goals.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

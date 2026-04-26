@@ -80,7 +80,7 @@ export default function AboutPage() {
               {
                 number: "01",
                 title: "Quality over quantity",
-                description: "We&apos;d rather create one piece of content that stops the scroll than ten that get ignored. Every post, every video, every ad is crafted to reflect the premium nature of your business.",
+                description: "We'd rather create one piece of content that stops the scroll than ten that get ignored. Every post, every video, every ad is crafted to reflect the premium nature of your business.",
               },
               {
                 number: "02",
@@ -90,7 +90,7 @@ export default function AboutPage() {
               {
                 number: "03",
                 title: "Partnership, not vendor",
-                description: "We don&apos;t disappear after onboarding. Regular check-ins, performance reviews, and strategy adjustments ensure your marketing evolves as your business grows.",
+                description: "We don't disappear after onboarding. Regular check-ins, performance reviews, and strategy adjustments ensure your marketing evolves as your business grows.",
               },
               {
                 number: "04",
@@ -147,7 +147,7 @@ export default function AboutPage() {
                   Every strategy we develop, every piece of content we create, every campaign we run is informed by deep knowledge of the New York City real estate landscape. The neighborhoods, the buyer profiles, the seasonal patterns, the competitive dynamics. We live and breathe this market.
                 </p>
                 <p className="text-white/70">
-                  The result? Marketing that actually resonates with NYC buyers and sellers, because it&apos;s built by people who understand them.
+                  The result? Marketing that actually resonates with NYC buyers and sellers, because it's built by people who understand them.
                 </p>
               </div>
 
@@ -182,10 +182,10 @@ export default function AboutPage() {
               We partner best with agents who are already successful but know they could be doing more with their marketing.
             </h2>
             <p className="text-white/50 leading-relaxed mb-12">
-              You don&apos;t need us to tell you how to sell real estate. You&apos;ve proven that. You need a team that can translate your expertise into a marketing presence that reflects your actual capabilities.
+              You don't need us to tell you how to sell real estate. You've proven that. You need a team that can translate your expertise into a marketing presence that reflects your actual capabilities.
             </p>
             <Link href="/get-started" className="btn-primary inline-block">
-              See If We&apos;re A Fit
+              See If We're A Fit
             </Link>
           </div>
         </div>
@@ -195,7 +195,7 @@ export default function AboutPage() {
       <section className="relative py-32 md:py-48 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <p className="text-[11px] tracking-[0.3em] uppercase text-white/40 mb-8">
-            Let&apos;s Talk
+            Let's Talk
           </p>
           <h2 className="font-serif text-4xl md:text-6xl font-normal text-white mb-8 leading-[1.1]">
             Ready to build something
@@ -203,7 +203,7 @@ export default function AboutPage() {
             <span className="italic">exceptional?</span>
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-xl mx-auto">
-            We&apos;re selective about who we work with because great partnerships require alignment. Let&apos;s find out if we&apos;re right for each other.
+            We're selective about who we work with because great partnerships require alignment. Let's find out if we're right for each other.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-started" className="btn-primary inline-block">
